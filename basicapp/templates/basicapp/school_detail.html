@@ -10,10 +10,14 @@
 <p> Location : {{school_detail.location}}
 <h3>Students: </h3>
 
-{% for student in school_detail %}
-<p> {{student.name}} is {{student.age}} year old</p>
+
+{% for students in school_detail.students.all %}
+<p> {{students.name}} is {{students.age}} year old</p>
 {% endfor %}
 
 
+</div>
+<div>
+<a class = "btn btn-warning" href="{% url 'basicapp:update' pk=school_detail.pk %}">Update</a>
 </div>
 {% endblock body_block %}
